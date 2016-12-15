@@ -6,14 +6,17 @@ module Test.HTestU.Streaming
  , rightSplitStreamFromGen
  ) where
 
-import System.Random (RandomGen, next, split)
+import System.Random.TF.Gen ( RandomGen, next, split )
 import Data.Tuple (swap)
+import GHC.Word ( Word32 )
+
+type RandomNumber = Word32
 
 -- | Synonym for an infinite stream of random numbers
-type RandomStream = [Int]
+type RandomStream = [RandomNumber]
 
 -- | Endomorphic wrapper for 'next' function
-wrappedNext :: RandomGen g => (Int, g) -> (Int, g)
+wrappedNext :: RandomGen g => (RandomNumber, g) -> (RandomNumber, g)
 wrappedNext (_, newGen) = next newGen
 
 -- | Generates a stream from a PRNG by using a repeated 'next' application

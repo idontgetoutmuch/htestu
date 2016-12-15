@@ -9,7 +9,7 @@ module Test.HTestU.Wrapping
   , randomStreamActionToWrappedCallback
   ) where
 
-import System.Random (RandomGen)
+import System.Random.TF.Gen ( RandomGen )
 import Data.IORef (IORef, newIORef, readIORef, writeIORef)
 import Foreign.Ptr (Ptr, FunPtr)
 import Foreign.C.Types (CUInt(..))

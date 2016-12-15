@@ -9,7 +9,7 @@ module Test.HTestU
   , c_bigCrush
   ) where
 
-import System.Random (RandomGen)
+import System.Random.TF.Gen ( RandomGen )
 
 import Foreign.Marshal.Alloc (free)
 import Foreign.Marshal.Array (peekArray)
